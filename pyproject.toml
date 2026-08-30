@@ -1,0 +1,102 @@
+[project]
+name = "baltic-py"
+version = "0.1.0"
+description = "Python client for the Baltic Transparency Dashboard (BTD) open API"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = [
+    "baltic",
+    "baltic-py",
+    "py-baltic",
+    "btd",
+    "btd-api",
+    "baltic transparency dashboard",
+    "transparency dashboard",
+    "elering",
+    "litgrid",
+    "ast",
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+requires-python = ">=3.11"
+# tzdata only: Windows ships no IANA database, which zoneinfo needs for EET/CET.
+dependencies = ["tzdata; sys_platform == 'win32'"]
+
+[project.urls]
+Repository = "https://github.com/hoofir/baltic-py"
+Issues = "https://github.com/hoofir/baltic-py/issues"
+"BTD open API" = "https://baltic.transparency-dashboard.eu/documentation/api"
+
+[dependency-groups]
+dev = [
+    "deptry>=0.25.1",
+    "ipykernel>=7.1.0",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.14.10",
+    "twine>=6.2.0",
+    "ty>=0.0.59",
+]
+
+# -----------------------------------------
+
+[build-system]
+requires = ["uv-build<0.12"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = "src"
+module-name = "baltic"
+
+# -----------------------------------------
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not live'"
+markers = ["live: hits the real BTD API (deselected by default)"]
+
+# -----------------------------------------
+
+[tool.ruff.lint]
+ignore = ["E501"] # handled by the formatter
+select = ["C", "E", "F", "I"]
+extend-select = ["ANN", "PYI"]
+
+[tool.ruff.lint.per-file-ignores]
+# JSON payloads are genuinely untyped until they are parsed into a model.
+"src/baltic/_http.py" = ["ANN401"]
+"src/baltic/models.py" = ["ANN401"]
+"tests/**" = ["ANN"]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 72
+
+# -----------------------------------------
+
+[tool.deptry.per_rule_ignores]
+# Imported as `zoneinfo`; only needed to supply the IANA database on Windows.
+DEP002 = ["tzdata"]
+
+# -----------------------------------------
+
+[tool.ty]
+src.include = ["src", "tests"]
+terminal.output-format = "concise"
+
+[tool.ty.rules]
+unused-ignore-comment = "warn"
+possibly-unresolved-reference = "warn"
+possibly-missing-attribute = "error"
+possibly-missing-import = "error"
+missing-type-argument = "error"

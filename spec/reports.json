@@ -1,0 +1,1505 @@
+{
+    "error": false,
+    "message": [],
+    "data": {
+        "nodes": [
+            {
+                "id": 155,
+                "title": "mFRR satisfied demand price",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1781526182,
+                "changed": 1781526251,
+                "summary": "<p>mFRR balancing energy price used in the calculation of the weighted average balancing energy price.</p>",
+                "_empty_summary": true,
+                "machine_name": "mfrr_satisfied_demand_price",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    61
+                ]
+            },
+            {
+                "id": 154,
+                "title": "aFRR satisfied demand price",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1781526052,
+                "changed": 1781526173,
+                "summary": "<p>aFRR balancing energy price used in the calculation of the weighted average balancing energy price.</p>",
+                "_empty_summary": true,
+                "machine_name": "afrr_satisfied_demand_price",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    61
+                ]
+            },
+            {
+                "id": 153,
+                "title": "Price of mFRR reserve bids",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1781085451,
+                "changed": 1781085715,
+                "machine_name": "price_mfrr_reserve_bids",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    55
+                ]
+            },
+            {
+                "id": 152,
+                "title": "Price of aFRR reserve bids",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1781084709,
+                "changed": 1781087010,
+                "machine_name": "price_afrr_reserve_bids",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    55
+                ]
+            },
+            {
+                "id": 151,
+                "title": "Price of FCR reserve bids",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1781083505,
+                "changed": 1781083775,
+                "machine_name": "fcr_reserve_bid_price",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    55
+                ]
+            },
+            {
+                "id": 150,
+                "title": "Allocated capacity limit",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1781080198,
+                "changed": 1781080374,
+                "machine_name": "allocated_capacity_limit",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    112
+                ]
+            },
+            {
+                "id": 149,
+                "title": "Applied mark-up",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1781077419,
+                "changed": 1781078237,
+                "machine_name": "applied_mark_up",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    112
+                ]
+            },
+            {
+                "id": 148,
+                "title": "Increased demands",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1780994641,
+                "changed": 1780995709,
+                "machine_name": "increased_demands",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    112
+                ]
+            },
+            {
+                "id": 131,
+                "title": "Volume of reserve bids",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1765280171,
+                "changed": 1765280551,
+                "summary": "<p><span data-teams=\"true\">The data present aggregated bid volumes from market participants submitted for the corresponding Baltic balancing capacity market time unit, product and direction (if applicable) by country. <strong>All bids volumes are summed regardless of the bid attributes (exclusive group, technical limitations in maximum duration or minimal resting time or other).&nbsp;</strong></span></p>",
+                "_empty_summary": true,
+                "machine_name": "volume_of_reserve_bids",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    55
+                ]
+            },
+            {
+                "id": 130,
+                "title": "Volume of demand reduction reserve bids",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1765279589,
+                "changed": 1765280129,
+                "summary": "<p><span data-teams=\"true\">The data present aggregated bid volumes from <strong>Demand reduction</strong> resources as defined by market rules, submitted for the corresponding Baltic balancing capacity market time unit, product and direction (if applicable) by country.</span></p>",
+                "_empty_summary": true,
+                "machine_name": "volume_of_demand_reduction_reserve_bids",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    55
+                ]
+            },
+            {
+                "id": 129,
+                "title": "Volume of back-up reserve bids",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1765278473,
+                "changed": 1765280810,
+                "summary": "<p>The data present aggregated bid volumes from Back-up resources as defined by market rules, submitted for the corresponding Baltic balancing capacity market time unit, product and direction (if applicable) by country.</p>",
+                "_empty_summary": true,
+                "machine_name": "volume_of_back_up_reserve_bids",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    55
+                ]
+            },
+            {
+                "id": 123,
+                "title": "Allocated cross-border capacity for balancing reserves (Legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1759225285,
+                "changed": 1759225378,
+                "summary": "<p>Allocated cross-border capacity for balancing reserves.</p><p>Data is published in PT1H resolution.</p>",
+                "_empty_summary": true,
+                "machine_name": "allocated_cb_capacity_legacy",
+                "default_display": "table",
+                "resolutions": [
+                    "PT1H"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 122,
+                "title": "Volume of procured reserves (Legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1759224954,
+                "changed": 1759225101,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "procured_reserves_legacy",
+                "default_display": "table",
+                "resolutions": [
+                    "PT1H"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 121,
+                "title": "Price of procured reserves (Legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1759218967,
+                "changed": 1759219083,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "price_procured_reserves_legacy",
+                "default_display": "table",
+                "resolutions": [
+                    "PT1H"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 120,
+                "title": "Demand for balancing reserves (Legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1759218600,
+                "changed": 1759218740,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "reserves_demand_legacy",
+                "default_display": "table",
+                "resolutions": [
+                    "PT1H"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 113,
+                "title": "Netted and exchanged volumes aFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1744569039,
+                "changed": 1744569372,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "netted_exchanged_volumes_afrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    93
+                ]
+            },
+            {
+                "id": 112,
+                "title": "Total satisfied demand for balancing purposes from automatic FRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1744140372,
+                "changed": 1744140496,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "satisfied_demand_afrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    98
+                ]
+            },
+            {
+                "id": 111,
+                "title": "Cross-border capacity limits",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1743408510,
+                "changed": 1747732622,
+                "summary": "<p>Cross border capacity limits show the available capacities between cross-borders, which enable the exchange of balancing energy.</p>",
+                "_empty_summary": true,
+                "machine_name": "cross_border_capacity_limits_v2",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    63
+                ]
+            },
+            {
+                "id": 110,
+                "title": "Local marginal price aFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1740138471,
+                "changed": 1746731040,
+                "summary": "<p>Price formed for each Baltic TSO respective BSPs activated aFRR bids according for each direction separately.<br>Local marginal price aFRR forming and usage described in TSOs terms and conditions.</p><p>&nbsp;</p><p>Price for Latvia area published as weighted average price of aFRR activations done by BSPs in Latvia in MTU per direction. If in one direction there are no activations from BSPs in Latvia, price displayed as single price in both directions in respective MTU. If no activations from BSPs in Latvia than no publication is made for respective MTU.</p>",
+                "_empty_summary": true,
+                "machine_name": "local_marginal_price_afrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    61
+                ]
+            },
+            {
+                "id": 108,
+                "title": "Allocated cross-border capacity for balancing reserves (\"Description\" tab includes link to 60-min)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1738662408,
+                "changed": 1759310484,
+                "summary": "<p>Allocated cross-border capacity for balancing reserves.</p><p><strong>Historical data in 60-minute resolution could be found here: https://baltic.transparency-dashboard.eu/node/123</strong></p>",
+                "_empty_summary": true,
+                "machine_name": "allocated_cb_capacity",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    112
+                ]
+            },
+            {
+                "id": 107,
+                "title": "Price of procured reserves (\"Description\" tab includes link to 60-min)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1738568489,
+                "changed": 1759310474,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "price_procured_reserves",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    112
+                ]
+            },
+            {
+                "id": 106,
+                "title": "Volume of procured reserves (\"Description\" tab includes link to 60-min)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1738567927,
+                "changed": 1759310459,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "procured_reserves",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    112
+                ]
+            },
+            {
+                "id": 105,
+                "title": "Demand for balancing reserves (\"Description\" tab includes link to 60-min)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1738343845,
+                "changed": 1759310496,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "reserves_demand",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    112
+                ]
+            },
+            {
+                "id": 104,
+                "title": "aFRR bid prices",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1737958923,
+                "changed": 1738557872,
+                "summary": "<p>The minimum and maximum prices of balancing energy bids based on aFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "afrr_bid_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    57,
+                    55
+                ]
+            },
+            {
+                "id": 103,
+                "title": "Unavailable aFRR bid volumes",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1737958718,
+                "changed": 1738322939,
+                "summary": "<p>Unavailable bids refer to aggregated bid volumes, based on aFRR product, which have been adjusted by BSPs prior to or after the balancing bid submission gate closure time.&nbsp;</p>",
+                "_empty_summary": true,
+                "machine_name": "unavailable_afrr_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    55,
+                    56
+                ]
+            },
+            {
+                "id": 102,
+                "title": "aFRR bid volumes",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1737958441,
+                "changed": 1741763023,
+                "summary": "<p>Aggregated volumes of balancing energy bids based on aFRR product, submitted to each Baltic TSO by their local BSPs for upward and downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "volumes_afrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54
+                ]
+            },
+            {
+                "id": 101,
+                "title": "Activations - aFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1737523659,
+                "changed": 1737523938,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "activations_afrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    58
+                ]
+            },
+            {
+                "id": 98,
+                "title": "DA mFRR bid prices",
+                "type": "report",
+                "status": true,
+                "promoted": false,
+                "sticky": false,
+                "created": 1728638370,
+                "changed": 1728639718,
+                "summary": "<p>The minimum and maximum prices of balancing energy bids based on SA mFRR product.</p><p>DA product based bids are applicable only for Estonian area.</p>",
+                "_empty_summary": true,
+                "machine_name": "da_mfrr_bid_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    57,
+                    55
+                ]
+            },
+            {
+                "id": 97,
+                "title": "DA mFRR bid volumes",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728637943,
+                "changed": 1728638186,
+                "summary": "<p>Aggregated volumes of balancing energy bids based on DA mFRR product.</p><p>DA product based bids are applicable only for Estonian area.</p>",
+                "_empty_summary": true,
+                "machine_name": "da_mfrr_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    55,
+                    56
+                ]
+            },
+            {
+                "id": 95,
+                "title": "Normal activations - Local mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728632826,
+                "changed": 1735378086,
+                "summary": "<p>Aggregated volume of balancing energy bids (SA, DA or local) from each Baltic TSO respective BSPs activated locally with balancing purpose.</p>",
+                "_empty_summary": true,
+                "machine_name": "normal_activations_local_mfrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    59,
+                    58
+                ]
+            },
+            {
+                "id": 94,
+                "title": "Special activations - Total mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728632665,
+                "changed": 1735377974,
+                "summary": "<p>Aggregated volume of balancing energy bids (SA, DA or local mFRR) from each Baltic TSO respective BSPs activated locally with purpose countertrade or system services.</p>",
+                "_empty_summary": true,
+                "machine_name": "special_activations_total_mfrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    58,
+                    60
+                ]
+            },
+            {
+                "id": 93,
+                "title": "DSB (Direction of System Balancing)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728632534,
+                "changed": 1728634948,
+                "summary": "<p>Direction of system balancing indicates the balancing energy reference price (upward vs downward) and the application of neutrality component, for the calculation of the imbalance price. The numerical value \u201c1\u201d shall signify positive balancing direction i.e. the balancing energy reference price shall be the upward balancing energy price of the respective imbalance area, to which the neutrality component shall be added.",
+                "_empty_summary": true,
+                "machine_name": "direction_of_balancing_v2",
+                "default_display": "chart",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    62
+                ]
+            },
+            {
+                "id": 92,
+                "title": "Neutrality Component",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728632445,
+                "changed": 1728635028,
+                "summary": "<p>Calculated in accordance with each TSOs terms &amp; conditions.</p>",
+                "_empty_summary": true,
+                "machine_name": "neutrality_component",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    61
+                ]
+            },
+            {
+                "id": 90,
+                "title": "Baltic TSO-TSO exchange",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728632137,
+                "changed": 1744569871,
+                "summary": "<p>Baltic exchanged and netted volume in case of Fallback mFRR exchange between Baltic TSO by area.</p>",
+                "_empty_summary": true,
+                "machine_name": "baltic_tso_tso_exchange",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    93
+                ]
+            },
+            {
+                "id": 89,
+                "title": "Total satisfied demand from non-baltic TSO ",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728632031,
+                "changed": 1742551315,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 250);color:rgb(0, 0, 0);display:inline !important;float:none;font-family:Gordita, sans-serif;font-size:14px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;\">Requested and satisfied total demand in MTU from non-Baltic TSO.&nbsp;</span></p>",
+                "_empty_summary": true,
+                "machine_name": "total_satisfied_demand_from_nonbaltic_tsos",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    98
+                ]
+            },
+            {
+                "id": 88,
+                "title": "Total satisfied demand for balancing purposes mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728631939,
+                "changed": 1741258255,
+                "summary": "<p>Requested and satisfied total demand in MTU. Total demand consists of satisfied demand mFRR for TSOs area BRP imbalance reduction via MARI, locally or from neighboring TSOs.</p>",
+                "_empty_summary": true,
+                "machine_name": "total_satisfied_demand_for_balancing_purposes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    98
+                ]
+            },
+            {
+                "id": 86,
+                "title": "Netted and exchanged volumes mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728454518,
+                "changed": 1744569390,
+                "summary": "<p>Net position of cross border activation flows resulting from activation in MARI platform, published per Area.</p>",
+                "_empty_summary": true,
+                "machine_name": "netted_exchanged_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    93
+                ]
+            },
+            {
+                "id": 85,
+                "title": "Normal activations - DA mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728454369,
+                "changed": 1728468574,
+                "summary": "<p>Aggregated volume of balancing energy bids from each Baltic TSO respective BSPs activated in DA mFRR activation process.</p>",
+                "_empty_summary": true,
+                "machine_name": "normal_activations_da_mfrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    59,
+                    58
+                ]
+            },
+            {
+                "id": 84,
+                "title": "Normal activations - SA mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728454278,
+                "changed": 1728468603,
+                "summary": "<p>Aggregated volume of balancing energy bids from each Baltic TSO respective BSPs activated in SA mFRR activation process.</p>",
+                "_empty_summary": true,
+                "machine_name": "normal_activations_sa_mfrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    59,
+                    58
+                ]
+            },
+            {
+                "id": 83,
+                "title": "Imbalance volumes",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728418125,
+                "changed": 1728638743,
+                "summary": "<p>Imbalance volumes depict the hourly area control error value as it would have been be if power balancing was not performed by the TSOs.</p>",
+                "_empty_summary": true,
+                "machine_name": "imbalance_volumes_v2",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    62
+                ]
+            },
+            {
+                "id": 82,
+                "title": "Local marginal price mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": false,
+                "sticky": false,
+                "created": 1728041168,
+                "changed": 1744571260,
+                "summary": "<p>Price formed for each Baltic TSO respective BSPs activated mFRR bids according for each direction separately.<br>Local marginal price forming and usage described in TSOs terms and conditions.</p><p>MTUs with no price formed will have no data published (In Latvia area Local marginal price is formed only in case of local activations)</p>",
+                "_empty_summary": true,
+                "machine_name": "local_marginal_price_mfrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    61
+                ]
+            },
+            {
+                "id": 81,
+                "title": "Cross border marginal price",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728040759,
+                "changed": 1733485957,
+                "summary": "<p>CBMPs received from MARI for each product (SA and DA) and direction separately.</p>",
+                "_empty_summary": true,
+                "machine_name": "cross_border_marginal_price",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    61
+                ]
+            },
+            {
+                "id": 80,
+                "title": "Current balancing state",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1728032910,
+                "changed": 1728635562,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "current_balancing_state_v2",
+                "default_display": "chart",
+                "resolutions": [
+                    "PT1M"
+                ],
+                "tags": [
+                    54
+                ]
+            },
+            {
+                "id": 79,
+                "title": "SA mFRR bid prices",
+                "type": "report",
+                "status": true,
+                "promoted": false,
+                "sticky": false,
+                "created": 1727791500,
+                "changed": 1728635464,
+                "summary": "<p>The minimum and maximum prices of balancing energy bids based on SA mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p><p>Bids, which are eligible for both scheduled and direct activation will be published together with SA bid prices item.</p>",
+                "_empty_summary": true,
+                "machine_name": "sa_mfrr_bid_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    57,
+                    55
+                ]
+            },
+            {
+                "id": 78,
+                "title": "Unavailable mFRR bid volumes",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1727790894,
+                "changed": 1733739289,
+                "summary": "<p>Unavailable bids refer to aggregated bid volumes, based on mFRR product, which have been adjusted by BSPs prior to or after the balancing bid submission gate closure time.&nbsp;</p><p>Under this item is not included unavailability for MARI activation due to local activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "unavailable_mfrr_bid_volumes_v2",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    55,
+                    56
+                ]
+            },
+            {
+                "id": 77,
+                "title": "Local mFRR (ER) bid volumes",
+                "type": "report",
+                "status": true,
+                "promoted": false,
+                "sticky": false,
+                "created": 1727790564,
+                "changed": 1727790701,
+                "summary": "<p>Aggregated volumes of balancing energy bids based on ER mFRR product, submitted to each Baltic TSO by their local BSPs for upward and downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "local_mfrr_er_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    55,
+                    56
+                ]
+            },
+            {
+                "id": 76,
+                "title": "SA mFRR bid volumes",
+                "type": "report",
+                "status": true,
+                "promoted": false,
+                "sticky": false,
+                "created": 1727788948,
+                "changed": 1728638293,
+                "summary": "<p>Aggregated volumes of balancing energy bids based on SA mFRR product, submitted to each Baltic TSO by their local BSPs for upward and downward activation.</p><p>Bids, which are eligible for both scheduled and direct activation will be published together with SA bids.</p>",
+                "_empty_summary": true,
+                "machine_name": "sa_mfrr_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    55,
+                    56
+                ]
+            },
+            {
+                "id": 68,
+                "title": "Neutrality Component (legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1644916282,
+                "changed": 1728634995,
+                "machine_name": "neutrality",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 67,
+                "title": "DSB (Direction of System Balancing) (legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1642147491,
+                "changed": 1728634904,
+                "summary": "<p style=\"margin-bottom:13px;text-align:justify;\">Direction of system balancing indicates the balancing energy reference price (upward vs downward) and the application of neutrality component, for the calculation of the imbalance price. The numerical value \u201c1\u201d shall signify positive balancing direction i.e. the balancing energy reference price shall be the upward balancing energy price of the respective imbalance area, to which the neutrality component shall be added.</p>",
+                "_empty_summary": true,
+                "machine_name": "direction_of_balancing",
+                "default_display": "chart",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 35,
+                "title": "Normal activations - Total",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638066,
+                "summary": "<p>Aggregated volume of balancing energy bids activated from both mFRR &amp; ER mFRR product bids for Baltic CoBA balancing purposes with the aim of minimizing the Baltic ACE. Volumes are shown based on the location of the resource.</p>",
+                "_empty_summary": true,
+                "machine_name": "normal_activations_total",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 36,
+                "title": "Normal activations - mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638048,
+                "summary": "<p>Aggregated volume of balancing energy bids activated from mFRR product bids for Baltic CoBA balancing purposes with the aim of minimizing the Baltic ACE. Volumes are shown based on the location of the resource.</p>",
+                "_empty_summary": true,
+                "machine_name": "normal_activations_mfrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 37,
+                "title": "Normal activations - ER mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638028,
+                "summary": "<p>Aggregated volume of balancing energy bids activated from ER mFRR product bids for Baltic CoBA balancing purposes with the aim of minimizing the Baltic ACE. Volumes are shown based on the location of the resource.</p>",
+                "_empty_summary": true,
+                "machine_name": "normal_activations_er_mfrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 38,
+                "title": "Special activations - Total",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728637967,
+                "summary": "<p>Aggregated volume of balancing energy bids activated from both mFRR &amp; ER mFRR product bids for reasons other than Baltic CoBA balancing purposes (system services &amp; countertrade). Volumes are shown based on the location of the resource.</p>",
+                "_empty_summary": true,
+                "machine_name": "special_activations_total",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 39,
+                "title": "System services",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638007,
+                "summary": "<p>Aggregated volume of balancing energy activated from both mFRR &amp; ER mFRR product bids other purposes (system constraints, network issues) or at the request of a non-Baltic TSO. Volumes are shown based on the location of the resource.</p>",
+                "_empty_summary": true,
+                "machine_name": "system_services",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 40,
+                "title": "Countertrade",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728637987,
+                "summary": "<p>Aggregated volume of balancing energy activated from both mFRR &amp; ER mFRR product bids for congestion managament. Volumes are shown based on the location of the resource.</p>",
+                "_empty_summary": true,
+                "machine_name": "countertrade",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 41,
+                "title": "Balancing energy reference prices",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728415120,
+                "summary": "<p><span style=\"-webkit-text-stroke-width:0px;background-color:rgb(247, 248, 255);color:rgb(34, 35, 48);display:inline !important;float:none;font-family:Ginter, Inter, &quot;Helvetica Neue&quot;, BlinkMacSystemFont, -apple-system, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:n",
+                "_empty_summary": true,
+                "machine_name": "balancing_energy_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    61
+                ]
+            },
+            {
+                "id": 42,
+                "title": "Imbalance prices",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1756122412,
+                "summary": "<p>The imbalance price denotes the price, which is used for the settlement of imbalances.</p>",
+                "_empty_summary": true,
+                "machine_name": "imbalance_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    54,
+                    61
+                ]
+            },
+            {
+                "id": 43,
+                "title": "Current balancing state (legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728635546,
+                "summary": "<p>The current balancing state denotes the area control error value as it would have been be if power balancing was not performed by the TSO. The data is published in real-time for each minute with a 25 minute delay.</p>",
+                "_empty_summary": true,
+                "machine_name": "current_balancing_state",
+                "default_display": "chart",
+                "resolutions": [
+                    "PT1M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 44,
+                "title": "Imbalance volumes (legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638758,
+                "summary": "<p>Imbalance volumes depict the hourly area control error value as it would have been be if power balancing was not performed by the TSOs.</p>",
+                "_empty_summary": true,
+                "machine_name": "imbalance_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 45,
+                "title": "Cross-Zonal Capacities",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728634845,
+                "summary": "<p>Cross-zonal capacity within the balancing timeframe (CZCBT) show the available capacities between cross-borders, which enable the exchange of balancing energy.</p>",
+                "_empty_summary": true,
+                "machine_name": "cross_zonal_capacities",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 30,
+                "title": "mFRR bid volumes",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638158,
+                "summary": "<p>Aggregated volumes of balancing energy bids based on mFRR product, submitted to each Baltic TSO by their local BSPs for upward and downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "mfrr_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT1H"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 31,
+                "title": "ER mFRR bid volumes",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638138,
+                "summary": "<p>Aggregated volumes of balancing energy bids based on ER mFRR product, submitted to each Baltic TSO by their local BSPs for upward and downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "er_mfrr_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 32,
+                "title": "Unavailable mFRR bid volumes (legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728635116,
+                "summary": "<p>Unavailable bids refer to aggregated bid volumes, based on mFRR product, which have been adjusted by BSPs prior to or after the balancing bid submission gate closure time.</p>",
+                "_empty_summary": true,
+                "machine_name": "unavailable_mfrr_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 33,
+                "title": "mFRR bid prices",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638085,
+                "summary": "<p>The minimum and maximum prices of balancing energy bids based on mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "mfrr_bid_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 34,
+                "title": "ER mFRR bid prices",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638118,
+                "summary": "<p>The minimum and maximum prices of balancing energy bids based on ER mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "er_mfrr_bid_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            }
+        ],
+        "tags": [
+            {
+                "id": 54,
+                "label": "Balancing",
+                "name": "balancing",
+                "path": [
+                    54
+                ],
+                "depth": 0,
+                "weight": 0,
+                "p": "balancing"
+            },
+            {
+                "id": 58,
+                "label": "Activations",
+                "name": "activations",
+                "path": [
+                    54,
+                    58
+                ],
+                "depth": 1,
+                "weight": 0,
+                "p": "balancing--activations"
+            },
+            {
+                "id": 59,
+                "label": "Normal Activation",
+                "name": "normal-activation",
+                "path": [
+                    54,
+                    58,
+                    59
+                ],
+                "depth": 2,
+                "weight": 0,
+                "p": "balancing--activations--normal-activation"
+            },
+            {
+                "id": 60,
+                "label": "Special Activation",
+                "name": "special-activation",
+                "path": [
+                    54,
+                    58,
+                    60
+                ],
+                "depth": 2,
+                "weight": 0,
+                "p": "balancing--activations--special-activation"
+            },
+            {
+                "id": 61,
+                "label": "Balancing and Imbalance Prices",
+                "name": "balancing-and-imbalance-prices",
+                "path": [
+                    54,
+                    61
+                ],
+                "depth": 1,
+                "weight": 0,
+                "p": "balancing--balancing-and-imbalance-prices"
+            },
+            {
+                "id": 55,
+                "label": "Bids",
+                "name": "bids",
+                "path": [
+                    54,
+                    55
+                ],
+                "depth": 1,
+                "weight": 0,
+                "p": "balancing--bids"
+            },
+            {
+                "id": 56,
+                "label": "Offered Bids",
+                "name": "offered-bids",
+                "path": [
+                    54,
+                    55,
+                    56
+                ],
+                "depth": 2,
+                "weight": 0,
+                "p": "balancing--bids--offered-bids"
+            },
+            {
+                "id": 57,
+                "label": "Offered Prices",
+                "name": "offered-prices",
+                "path": [
+                    54,
+                    55,
+                    57
+                ],
+                "depth": 2,
+                "weight": 0,
+                "p": "balancing--bids--offered-prices"
+            },
+            {
+                "id": 63,
+                "label": "Capacities",
+                "name": "capacities",
+                "path": [
+                    54,
+                    63
+                ],
+                "depth": 1,
+                "weight": 0,
+                "p": "balancing--capacities"
+            },
+            {
+                "id": 62,
+                "label": "Imbalances",
+                "name": "imbalances",
+                "path": [
+                    54,
+                    62
+                ],
+                "depth": 1,
+                "weight": 0,
+                "p": "balancing--imbalances"
+            },
+            {
+                "id": 98,
+                "label": "Demands",
+                "name": "demands",
+                "path": [
+                    98
+                ],
+                "depth": 0,
+                "weight": 0,
+                "p": "demands"
+            },
+            {
+                "id": 93,
+                "label": "Exchange",
+                "name": "exchange",
+                "path": [
+                    93
+                ],
+                "depth": 0,
+                "weight": 0,
+                "p": "exchange"
+            },
+            {
+                "id": 94,
+                "label": "Legacy",
+                "name": "legacy",
+                "path": [
+                    94
+                ],
+                "depth": 0,
+                "weight": 0,
+                "p": "legacy"
+            },
+            {
+                "id": 112,
+                "label": "Reserves",
+                "name": "reserves",
+                "path": [
+                    112
+                ],
+                "depth": 0,
+                "weight": 0,
+                "p": "reserves"
+            }
+        ],
+        "limits": {
+            "limit": 4,
+            "period": [
+                {
+                    "has": "PT1M",
+                    "max": "3 months"
+                },
+                {
+                    "multiple": true,
+                    "max": "1 year"
+                }
+            ]
+        }
+    }
+}

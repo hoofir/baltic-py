@@ -1,0 +1,911 @@
+{
+    "swagger": "2.0",
+    "schemes": [
+        "https"
+    ],
+    "info": {
+        "description": "The REST API provide by the core REST module.",
+        "title": "BTD - REST API",
+        "version": "Versioning not supported"
+    },
+    "host": "api-baltic.transparency-dashboard.eu",
+    "basePath": "/",
+    "securityDefinitions": {
+        "csrf_token": {
+            "type": "apiKey",
+            "name": "X-CSRF-Token",
+            "in": "header",
+            "x-tokenUrl": "https://api-baltic.transparency-dashboard.eu/session/token"
+        }
+    },
+    "security": [
+        {
+            "csrf_token": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Data export",
+            "description": "Data export endpoints"
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/api/v1/export": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "type": "string",
+                        "enum": [
+                            "activations_afrr",
+                            "afrr_bid_prices",
+                            "afrr_satisfied_demand_price",
+                            "allocated_capacity_limit",
+                            "allocated_cb_capacity",
+                            "allocated_cb_capacity_legacy",
+                            "applied_mark_up",
+                            "balancing_energy_prices",
+                            "baltic_tso_tso_exchange",
+                            "countertrade",
+                            "cross_border_capacity_limits_v2",
+                            "cross_border_marginal_price",
+                            "cross_zonal_capacities",
+                            "current_balancing_state",
+                            "current_balancing_state_v2",
+                            "da_mfrr_bid_prices",
+                            "da_mfrr_bid_volumes",
+                            "direction_of_balancing",
+                            "direction_of_balancing_v2",
+                            "er_mfrr_bid_prices",
+                            "er_mfrr_bid_volumes",
+                            "fcr_reserve_bid_price",
+                            "imbalance_prices",
+                            "imbalance_volumes",
+                            "imbalance_volumes_v2",
+                            "increased_demands",
+                            "local_marginal_price_afrr",
+                            "local_marginal_price_mfrr",
+                            "local_mfrr_er_bid_volumes",
+                            "mfrr_bid_prices",
+                            "mfrr_bid_volumes",
+                            "mfrr_satisfied_demand_price",
+                            "netted_exchanged_volumes",
+                            "netted_exchanged_volumes_afrr",
+                            "neutrality",
+                            "neutrality_component",
+                            "normal_activations_da_mfrr",
+                            "normal_activations_er_mfrr",
+                            "normal_activations_local_mfrr",
+                            "normal_activations_mfrr",
+                            "normal_activations_sa_mfrr",
+                            "normal_activations_total",
+                            "price_afrr_reserve_bids",
+                            "price_mfrr_reserve_bids",
+                            "price_procured_reserves",
+                            "price_procured_reserves_legacy",
+                            "procured_reserves",
+                            "procured_reserves_legacy",
+                            "reserves_demand",
+                            "reserves_demand_legacy",
+                            "sa_mfrr_bid_prices",
+                            "sa_mfrr_bid_volumes",
+                            "satisfied_demand_afrr",
+                            "special_activations_total",
+                            "special_activations_total_mfrr",
+                            "system_services",
+                            "total_satisfied_demand_for_balancing_purposes",
+                            "total_satisfied_demand_from_nonbaltic_tsos",
+                            "unavailable_afrr_bid_volumes",
+                            "unavailable_mfrr_bid_volumes",
+                            "unavailable_mfrr_bid_volumes_v2",
+                            "volume_of_back_up_reserve_bids",
+                            "volume_of_demand_reduction_reserve_bids",
+                            "volume_of_reserve_bids",
+                            "volumes_afrr"
+                        ],
+                        "required": true,
+                        "description": "Report ID."
+                    },
+                    {
+                        "name": "start_date",
+                        "in": "query",
+                        "type": "string",
+                        "format": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}",
+                        "required": true,
+                        "description": "Export start timestamp. Format: `2024-01-01T00:00`"
+                    },
+                    {
+                        "name": "end_date",
+                        "in": "query",
+                        "type": "string",
+                        "format": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}",
+                        "required": true,
+                        "description": "Export end timestamp. Format: `2024-01-01T00:00`"
+                    },
+                    {
+                        "name": "output_time_zone",
+                        "in": "query",
+                        "type": "string",
+                        "enum": [
+                            "EET",
+                            "CET",
+                            "UTC"
+                        ],
+                        "required": true,
+                        "description": "Output time zone"
+                    },
+                    {
+                        "name": "output_format",
+                        "in": "query",
+                        "type": "string",
+                        "enum": [
+                            "json",
+                            "csv",
+                            "xlsx"
+                        ],
+                        "required": true,
+                        "description": "Output format"
+                    },
+                    {
+                        "name": "json_header_groups",
+                        "in": "query",
+                        "type": "string",
+                        "enum": [
+                            0,
+                            1
+                        ],
+                        "required": false,
+                        "default": 0,
+                        "description": "Add defined header groups to response as meta information."
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string|string[]|null",
+                                    "example": [
+                                        "Missing param."
+                                    ]
+                                },
+                                "data": {
+                                    "type": "null",
+                                    "example": null
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string|string[]|null",
+                                    "example": "Internal server error."
+                                },
+                                "data": {
+                                    "type": "null",
+                                    "example": null
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "boolean",
+                                    "example": false
+                                },
+                                "message": {
+                                    "type": "string|string[]|null",
+                                    "example": null
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "example": {
+                                        "id": "cross-zonal_capacities",
+                                        "export_id": "...",
+                                        "measurement_unit": "MW",
+                                        "resolution": "PT1H",
+                                        "precision": 3,
+                                        "precision_mode": "cut",
+                                        "default_display": "table",
+                                        "title": "Cross-Zonal Capacities",
+                                        "description": "<p>Cross-zonal capacity within the balancing timeframe (CZCBT) show the available capacities between cross-borders, which enable the exchange of balancing energy.</p>",
+                                        "timezone": "EET",
+                                        "local_timezone": "Europe/Tallinn",
+                                        "daylight_saving_transitions": false,
+                                        "creation_time": "2021-03-30T14:38:59+02:00",
+                                        "column_group_levels": 1,
+                                        "columns": [
+                                            {
+                                                "index": 0,
+                                                "label": "Upward",
+                                                "group_level_0": "Estonia",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 1,
+                                                "label": "Downward",
+                                                "group_level_0": "Estonia",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 2,
+                                                "label": "Upward",
+                                                "group_level_0": "Latvia",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 3,
+                                                "label": "Downward",
+                                                "group_level_0": "Latvia",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 4,
+                                                "label": "Upward",
+                                                "group_level_0": "Lithuania",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 5,
+                                                "label": "Downward",
+                                                "group_level_0": "Lithuania",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 6,
+                                                "label": "Upward",
+                                                "group_level_0": "Finland",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 7,
+                                                "label": "Downward",
+                                                "group_level_0": "Finland",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 8,
+                                                "label": "Upward",
+                                                "group_level_0": "Sweden",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 9,
+                                                "label": "Downward",
+                                                "group_level_0": "Sweden",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 10,
+                                                "label": "Upward",
+                                                "group_level_0": "Poland",
+                                                "res": "PT1H"
+                                            },
+                                            {
+                                                "index": 11,
+                                                "label": "Downward",
+                                                "group_level_0": "Poland",
+                                                "res": "PT1H"
+                                            }
+                                        ],
+                                        "timeseries": [
+                                            {
+                                                "from": "2020-11-25T00:00:00+01:00",
+                                                "to": "2020-11-25T01:00:00+01:00",
+                                                "values": [
+                                                    593,
+                                                    588.499,
+                                                    593,
+                                                    581,
+                                                    593,
+                                                    581,
+                                                    1,
+                                                    603.5,
+                                                    0,
+                                                    581,
+                                                    377,
+                                                    485
+                                                ]
+                                            },
+                                            {
+                                                "from": "2020-11-25T01:00:00+01:00",
+                                                "to": "2020-11-25T02:00:00+01:00",
+                                                "values": [
+                                                    758,
+                                                    717.833,
+                                                    778,
+                                                    717,
+                                                    778,
+                                                    717,
+                                                    213,
+                                                    742,
+                                                    0,
+                                                    700,
+                                                    1100,
+                                                    485
+                                                ]
+                                            },
+                                            {
+                                                "from": "2020-11-25T02:00:00+01:00",
+                                                "to": "2020-11-25T03:00:00+01:00",
+                                                "values": [
+                                                    751,
+                                                    714,
+                                                    788,
+                                                    714,
+                                                    788,
+                                                    714,
+                                                    241,
+                                                    714,
+                                                    0,
+                                                    700,
+                                                    186,
+                                                    485
+                                                ]
+                                            },
+                                            {
+                                                "from": "2020-11-25T03:00:00+01:00",
+                                                "to": "2020-11-25T04:00:00+01:00",
+                                                "values": [
+                                                    749.25,
+                                                    679,
+                                                    727,
+                                                    679,
+                                                    732,
+                                                    679,
+                                                    226,
+                                                    679,
+                                                    0,
+                                                    679,
+                                                    161,
+                                                    485
+                                                ]
+                                            },
+                                            {
+                                                "from": "2020-11-25T04:00:00+01:00",
+                                                "to": "2020-11-25T05:00:00+01:00",
+                                                "values": [
+                                                    724,
+                                                    854,
+                                                    763,
+                                                    724,
+                                                    763,
+                                                    724,
+                                                    234,
+                                                    854,
+                                                    0,
+                                                    700,
+                                                    1100,
+                                                    485
+                                                ]
+                                            },
+                                            {
+                                                "from": "2020-11-25T05:00:00+01:00",
+                                                "to": "2020-11-25T06:00:00+01:00",
+                                                "values": [
+                                                    683.333,
+                                                    717,
+                                                    683,
+                                                    717,
+                                                    683,
+                                                    797,
+                                                    439,
+                                                    717,
+                                                    0,
+                                                    700,
+                                                    1204,
+                                                    485
+                                                ]
+                                            },
+                                            {
+                                                "from": "2020-11-25T06:00:00+01:00",
+                                                "to": "2020-11-25T07:00:00+01:00",
+                                                "values": [
+                                                    736,
+                                                    744,
+                                                    824.767,
+                                                    744,
+                                                    787,
+                                                    744,
+                                                    176,
+                                                    744,
+                                                    0,
+                                                    700,
+                                                    1492,
+                                                    222
+                                                ]
+                                            }
+                                        ],
+                                        "header_groups": [
+                                            [
+                                                {
+                                                    "label": "Estonia",
+                                                    "width": 2,
+                                                    "start": 0,
+                                                    "to": 1
+                                                },
+                                                {
+                                                    "label": "Latvia",
+                                                    "width": 2,
+                                                    "start": 2,
+                                                    "to": 3
+                                                },
+                                                {
+                                                    "label": "Lithuania",
+                                                    "width": 2,
+                                                    "start": 4,
+                                                    "to": 5
+                                                },
+                                                {
+                                                    "label": "Finland",
+                                                    "width": 2,
+                                                    "start": 6,
+                                                    "to": 7
+                                                },
+                                                {
+                                                    "label": "Sweden",
+                                                    "width": 2,
+                                                    "start": 8,
+                                                    "to": 9
+                                                },
+                                                {
+                                                    "label": "Poland",
+                                                    "width": 2,
+                                                    "start": 10,
+                                                    "to": 11
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "label": "Upward",
+                                                    "width": 1,
+                                                    "start": 0
+                                                },
+                                                {
+                                                    "label": "Downward",
+                                                    "width": 1,
+                                                    "start": 1
+                                                },
+                                                {
+                                                    "label": "Upward",
+                                                    "width": 1,
+                                                    "start": 2
+                                                },
+                                                {
+                                                    "label": "Downward",
+                                                    "width": 1,
+                                                    "start": 3
+                                                },
+                                                {
+                                                    "label": "Upward",
+                                                    "width": 1,
+                                                    "start": 4
+                                                },
+                                                {
+                                                    "label": "Downward",
+                                                    "width": 1,
+                                                    "start": 5
+                                                },
+                                                {
+                                                    "label": "Upward",
+                                                    "width": 1,
+                                                    "start": 6
+                                                },
+                                                {
+                                                    "label": "Downward",
+                                                    "width": 1,
+                                                    "start": 7
+                                                },
+                                                {
+                                                    "label": "Upward",
+                                                    "width": 1,
+                                                    "start": 8
+                                                },
+                                                {
+                                                    "label": "Downward",
+                                                    "width": 1,
+                                                    "start": 9
+                                                },
+                                                {
+                                                    "label": "Upward",
+                                                    "width": 1,
+                                                    "start": 10
+                                                },
+                                                {
+                                                    "label": "Downward",
+                                                    "width": 1,
+                                                    "start": 11
+                                                }
+                                            ]
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "BTD API v1 Export",
+                "operationId": "btd_api_v1_export:GET",
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "cookie": []
+                    }
+                ],
+                "tags": [
+                    "Data export"
+                ]
+            }
+        },
+        "/api/v1/export-multiple": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "activations_afrr",
+                                "afrr_bid_prices",
+                                "afrr_satisfied_demand_price",
+                                "allocated_capacity_limit",
+                                "allocated_cb_capacity",
+                                "allocated_cb_capacity_legacy",
+                                "applied_mark_up",
+                                "balancing_energy_prices",
+                                "baltic_tso_tso_exchange",
+                                "countertrade",
+                                "cross_border_capacity_limits_v2",
+                                "cross_border_marginal_price",
+                                "cross_zonal_capacities",
+                                "current_balancing_state",
+                                "current_balancing_state_v2",
+                                "da_mfrr_bid_prices",
+                                "da_mfrr_bid_volumes",
+                                "direction_of_balancing",
+                                "direction_of_balancing_v2",
+                                "er_mfrr_bid_prices",
+                                "er_mfrr_bid_volumes",
+                                "fcr_reserve_bid_price",
+                                "imbalance_prices",
+                                "imbalance_volumes",
+                                "imbalance_volumes_v2",
+                                "increased_demands",
+                                "local_marginal_price_afrr",
+                                "local_marginal_price_mfrr",
+                                "local_mfrr_er_bid_volumes",
+                                "mfrr_bid_prices",
+                                "mfrr_bid_volumes",
+                                "mfrr_satisfied_demand_price",
+                                "netted_exchanged_volumes",
+                                "netted_exchanged_volumes_afrr",
+                                "neutrality",
+                                "neutrality_component",
+                                "normal_activations_da_mfrr",
+                                "normal_activations_er_mfrr",
+                                "normal_activations_local_mfrr",
+                                "normal_activations_mfrr",
+                                "normal_activations_sa_mfrr",
+                                "normal_activations_total",
+                                "price_afrr_reserve_bids",
+                                "price_mfrr_reserve_bids",
+                                "price_procured_reserves",
+                                "price_procured_reserves_legacy",
+                                "procured_reserves",
+                                "procured_reserves_legacy",
+                                "reserves_demand",
+                                "reserves_demand_legacy",
+                                "sa_mfrr_bid_prices",
+                                "sa_mfrr_bid_volumes",
+                                "satisfied_demand_afrr",
+                                "special_activations_total",
+                                "special_activations_total_mfrr",
+                                "system_services",
+                                "total_satisfied_demand_for_balancing_purposes",
+                                "total_satisfied_demand_from_nonbaltic_tsos",
+                                "unavailable_afrr_bid_volumes",
+                                "unavailable_mfrr_bid_volumes",
+                                "unavailable_mfrr_bid_volumes_v2",
+                                "volume_of_back_up_reserve_bids",
+                                "volume_of_demand_reduction_reserve_bids",
+                                "volume_of_reserve_bids",
+                                "volumes_afrr"
+                            ]
+                        },
+                        "required": true,
+                        "description": "List of report IDs."
+                    },
+                    {
+                        "name": "start_date",
+                        "in": "query",
+                        "type": "string",
+                        "format": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}",
+                        "required": true,
+                        "description": "Export start timestamp. Format: `2024-01-01T00:00`"
+                    },
+                    {
+                        "name": "end_date",
+                        "in": "query",
+                        "type": "string",
+                        "format": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}",
+                        "required": true,
+                        "description": "Export end timestamp. Format: `2024-01-01T00:00`"
+                    },
+                    {
+                        "name": "output_time_zone",
+                        "in": "query",
+                        "type": "string",
+                        "enum": [
+                            "EET",
+                            "CET",
+                            "UTC"
+                        ],
+                        "required": true,
+                        "description": "Output time zone"
+                    },
+                    {
+                        "name": "output_format",
+                        "in": "query",
+                        "type": "string",
+                        "enum": [
+                            "json",
+                            "csv",
+                            "xlsx"
+                        ],
+                        "required": true,
+                        "description": "Output format"
+                    },
+                    {
+                        "name": "json_header_groups",
+                        "in": "query",
+                        "type": "string",
+                        "enum": [
+                            0,
+                            1
+                        ],
+                        "required": false,
+                        "default": 0,
+                        "description": "Add defined header groups to response as meta information."
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string|string[]|null",
+                                    "example": [
+                                        "Missing param."
+                                    ]
+                                },
+                                "data": {
+                                    "type": "null",
+                                    "example": null
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string|string[]|null",
+                                    "example": "Internal server error."
+                                },
+                                "data": {
+                                    "type": "null",
+                                    "example": null
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "boolean",
+                                    "example": false
+                                },
+                                "message": {
+                                    "type": "string|string[]|null",
+                                    "example": null
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "example": {
+                                        "_todo": "TODO: add example"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "BTD API v1 Export multiple",
+                "operationId": "btd_api_v1_export_multiple:GET",
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "cookie": []
+                    }
+                ],
+                "tags": [
+                    "Data export"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "BtdExportData": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "export_id": {
+                    "type": "string"
+                },
+                "measurement_unit": {
+                    "type": "string"
+                },
+                "resolution": {
+                    "type": "string"
+                },
+                "precision": {
+                    "type": "number"
+                },
+                "precision_mode": {
+                    "type": "string"
+                },
+                "default_display": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "timezone": {
+                    "type": "string"
+                },
+                "local_timezone": {
+                    "type": "string"
+                },
+                "daylight_saving_transitions": {
+                    "type": "boolean"
+                },
+                "creation_time": {
+                    "type": "string"
+                },
+                "column_group_levels": {
+                    "type": "string"
+                },
+                "columns": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "index": {
+                                "type": "number"
+                            },
+                            "label": {
+                                "type": "string"
+                            },
+                            "group_level_0": {
+                                "type": "string"
+                            },
+                            "group_level_1": {
+                                "type": "string"
+                            },
+                            "group_level_2": {
+                                "type": "string"
+                            },
+                            "res": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "index",
+                            "label",
+                            "res",
+                            "group_level_0"
+                        ]
+                    }
+                },
+                "timeseries": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "from": {
+                                "type": "string"
+                            },
+                            "to": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "type": "array",
+                                "items": {
+                                    "type": "number",
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "header_groups": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "label": {
+                                    "type": "string"
+                                },
+                                "width": {
+                                    "type": "number"
+                                },
+                                "start": {
+                                    "type": "number"
+                                },
+                                "to": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "label",
+                                "start"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

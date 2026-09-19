@@ -1,7 +1,7 @@
 # baltic-py
 
-[![PyPI](https://img.shields.io/pypi/v/elering-py?label=PyPI)](https://pypi.org/project/elering-py/)
-[![CI](https://github.com/hoofir/elering-py/actions/workflows/ci.yml/badge.svg)](https://github.com/hoofir/elering-py/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/baltic-py?label=PyPI)](https://pypi.org/project/baltic-py/)
+[![CI](https://github.com/hoofir/baltic-py/actions/workflows/ci.yml/badge.svg)](https://github.com/hoofir/baltic-py/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Ruff](https://img.shields.io/badge/lint-ruff-purple)](https://github.com/astral-sh/ruff)
 [![Ruff](https://img.shields.io/badge/format-ruff-purple)](https://github.com/astral-sh/ruff)

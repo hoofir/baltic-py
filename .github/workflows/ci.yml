@@ -5,6 +5,7 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+  workflow_call:
   workflow_dispatch:
 
 concurrency:
@@ -15,7 +16,7 @@ permissions:
   contents: read
 
 jobs:
-  check:
+  check-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -25,19 +26,32 @@ jobs:
         uses: astral-sh/setup-uv@v10.0.1
         with:
           enable-cache: true
+          python-version: "3.13"
 
-      - name: Install dependencies
-        run: make setup
+      - run: make setup
+      - run: make check
+      - run: make build
 
-      - name: Run checks
-        run: make check
+      - name: Upload distributions
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11", "3.12", "3.13", "3.14"]
+        os: [ubuntu-latest]
+        python-version: ["3.11", "3.14"]
+        include:
+          - os: windows-latest
+            python-version: "3.14"
+    defaults:
+      run:
+        shell: bash # windows-latest ships no make
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -48,36 +62,5 @@ jobs:
           enable-cache: true
           python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies
-        run: make setup
-
-      - name: Run tests
-        run: make test-cov
-
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results-${{ matrix.python-version }}
-          path: |
-            tests.xml
-            coverage.xml
-          if-no-files-found: ignore
-
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v10.0.1
-
-      - name: Install dependencies
-        run: make setup
-
-      - name: Build package
-        run: make build
-
-      - name: Verify package metadata
-        run: uv run twine check dist/*
+      - run: uv sync --all-groups --locked
+      - run: uv run pytest

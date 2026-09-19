@@ -26,18 +26,12 @@ catalog: ## Regenerate src/baltic/_catalog.py from the vendored metadata
 
 # -----------------------------------------------------------
 
-.PHONY: help clean lint format check test test-cov test-live build setup spec spec-check catalog
+.PHONY: help sync setup clean lint format check test test-cov test-live build spec spec-check catalog
 .DEFAULT_GOAL := help
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*?## "} {printf "\033[36m%-12s\033[0m %s\n", $$1, $$2}'
-
-sync: ## Sync uv.lock + Create venv and install dependencies
-	uv sync --all-groups
-
-setup: ## Create venv and install dependencies
-	uv sync --all-groups --frozen
 
 clean: ## Remove caches
 	rm -rf .ruff_cache .pytest_cache .mypy_cache
@@ -64,6 +58,13 @@ test-live: ## Run the end-to-end tests against the real BTD API
 test-cov: ## Run tests + export test results and code coverage
 	uv run pytest --junitxml=tests.xml --cov-report=xml:coverage.xml --cov=src/baltic
 
+sync: ## Sync uv.lock + Create venv and install dependencies
+	uv sync --all-groups
+
+setup: ## Check uv.lock + Create venv and install dependencies
+	uv sync --all-groups --locked
+
 build: ## Build the sdist and wheel into dist/
 	rm -rf dist
 	uv build
+	uv run twine check --strict dist/*

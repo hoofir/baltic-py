@@ -11,12 +11,32 @@ permissions:
 jobs:
   spec-check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write # report drift where it is actually seen
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
 
       - name: Install uv
         uses: astral-sh/setup-uv@v10.0.1
+        with:
+          enable-cache: true
 
       - name: Compare published spec with in-use copy
         run: make spec-check
+
+      - name: Open an issue on drift
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: BTD spec drift detected
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          open="$(gh issue list --state open --search "in:title $TITLE" --json number --jq length)"
+          if [ "$open" -gt 0 ]; then
+            echo "a drift issue is already open"
+            exit 0
+          fi
+          gh issue create --title "$TITLE" --body \
+            "The published BTD metadata no longer matches the vendored copy. Run 'make spec catalog' and commit the result. Failing run: $RUN_URL"

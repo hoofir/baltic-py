@@ -4,35 +4,26 @@ on:
   push:
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+"
-  workflow_dispatch:
+
+concurrency:
+  group: cd-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: read
 
 jobs:
-  check-test:
+  CI:
+    uses: ./.github/workflows/ci.yml
+
+  publish:
+    needs: CI
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v10.0.1
-        with:
-          enable-cache: true
-
-      - name: Install dependencies
-        run: make setup
-
-      - name: Run checks
-        run: make check
-
-      - name: Run tests
-        run: make test
-
-  build:
-    needs: check-test
-    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/baltic-py
+    permissions:
+      id-token: write # PyPI trusted publishing
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -49,24 +40,6 @@ jobs:
             exit 1
           fi
 
-      - name: Build package
-        run: make build
-
-      - name: Upload distributions
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist/
-
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/p/baltic-py
-    permissions:
-      id-token: write # PyPI trusted publishing
-    steps:
       - name: Download distributions
         uses: actions/download-artifact@v4
         with:
@@ -89,7 +62,7 @@ jobs:
           path: dist/
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: dist/*
-          generate_release_notes: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release create "$GITHUB_REF_NAME" dist/* --generate-notes

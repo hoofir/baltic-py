@@ -2,7 +2,7 @@ name: Spec drift
 
 on:
   schedule:
-    - cron: "0 5 * * 1" # Mondays, 05:00 UTC
+    - cron: "0 3 * * 1" # Mondays, 03:00 UTC
   workflow_dispatch:
 
 permissions:

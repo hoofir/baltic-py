@@ -1,9 +1,33 @@
+import json
+from pathlib import Path
+
 import pytest
 
 import baltic
 from baltic._catalog import MAX_REPORTS_PER_REQUEST
 from baltic._reports import resolve
 from baltic.models import Report
+
+SPEC = Path(__file__).resolve().parents[1] / "spec" / "openapi.json"
+
+
+def test_export_endpoints_declare_the_same_report_ids():
+    spec = json.loads(SPEC.read_text(encoding="utf-8"))
+
+    def report_ids(path):
+        parameters = spec["paths"][path]["get"]["parameters"]
+        schema = next(
+            parameter["schema"] for parameter in parameters if parameter["name"] == "id"
+        )
+        if "enum" in schema:
+            return schema["enum"]
+        return schema["items"]["enum"]
+
+    single = report_ids("/api/v1/export")
+    multiple = report_ids("/api/v1/export-multiple")
+
+    assert set(single) == set(multiple)
+    assert set(baltic.REPORT_IDS) == set(single)
 
 
 def test_every_report_has_an_id_and_a_title():

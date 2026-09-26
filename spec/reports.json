@@ -997,6 +997,86 @@
                 ]
             },
             {
+                "id": 31,
+                "title": "ER mFRR bid volumes",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638138,
+                "summary": "<p>Aggregated volumes of balancing energy bids based on ER mFRR product, submitted to each Baltic TSO by their local BSPs for upward and downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "er_mfrr_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 32,
+                "title": "Unavailable mFRR bid volumes (legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728635116,
+                "summary": "<p>Unavailable bids refer to aggregated bid volumes, based on mFRR product, which have been adjusted by BSPs prior to or after the balancing bid submission gate closure time.</p>",
+                "_empty_summary": true,
+                "machine_name": "unavailable_mfrr_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 33,
+                "title": "mFRR bid prices",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638085,
+                "summary": "<p>The minimum and maximum prices of balancing energy bids based on mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "mfrr_bid_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 34,
+                "title": "ER mFRR bid prices",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638118,
+                "summary": "<p>The minimum and maximum prices of balancing energy bids based on ER mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "er_mfrr_bid_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
                 "id": 35,
                 "title": "Normal activations - Total",
                 "type": "report",
@@ -1233,86 +1313,6 @@
                 "default_display": "table",
                 "resolutions": [
                     "PT1H"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 31,
-                "title": "ER mFRR bid volumes",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728638138,
-                "summary": "<p>Aggregated volumes of balancing energy bids based on ER mFRR product, submitted to each Baltic TSO by their local BSPs for upward and downward activation.</p>",
-                "_empty_summary": true,
-                "machine_name": "er_mfrr_bid_volumes",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 32,
-                "title": "Unavailable mFRR bid volumes (legacy)",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728635116,
-                "summary": "<p>Unavailable bids refer to aggregated bid volumes, based on mFRR product, which have been adjusted by BSPs prior to or after the balancing bid submission gate closure time.</p>",
-                "_empty_summary": true,
-                "machine_name": "unavailable_mfrr_bid_volumes",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 33,
-                "title": "mFRR bid prices",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728638085,
-                "summary": "<p>The minimum and maximum prices of balancing energy bids based on mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
-                "_empty_summary": true,
-                "machine_name": "mfrr_bid_prices",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 34,
-                "title": "ER mFRR bid prices",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728638118,
-                "summary": "<p>The minimum and maximum prices of balancing energy bids based on ER mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
-                "_empty_summary": true,
-                "machine_name": "er_mfrr_bid_prices",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
                 ],
                 "tags": [
                     94

@@ -1,6 +1,6 @@
 [project]
 name = "baltic-py"
-version = "0.1.0"
+version = "0.2.0"
 description = "Python client for the Baltic Transparency Dashboard (BTD) open API"
 readme = "README.md"
 license = "MIT"

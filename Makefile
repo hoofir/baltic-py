@@ -8,10 +8,6 @@ CATALOG = src/baltic/_catalog.py
 # vendored copy only changes when the API itself does.
 PIN_EXAMPLES = sed -E 's/Format: `[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}`/Format: `2024-01-01T00:00`/g'
 
-spec: ## Refresh the vendored API metadata
-	curl -sSf "$(OAS_URL)" | uv run python -m json.tool | $(PIN_EXAMPLES) > $(SPEC)
-	curl -sSf "$(REPORTS_URL)" | uv run python -m json.tool > $(REPORTS)
-
 spec-check: ## Fail if the published metadata differs from the vendored copy
 	@curl -sSf "$(OAS_URL)" | uv run python -m json.tool | $(PIN_EXAMPLES) > $(SPEC).live
 	@curl -sSf "$(REPORTS_URL)" | uv run python -m json.tool > $(REPORTS).live
@@ -19,6 +15,10 @@ spec-check: ## Fail if the published metadata differs from the vendored copy
 		echo "spec is up to date" || \
 		(rm -f $(SPEC).live $(REPORTS).live; echo "spec drifted: run 'make spec catalog'"; exit 1)
 	@rm -f $(SPEC).live $(REPORTS).live
+
+spec: ## Refresh the vendored API metadata
+	curl -sSf "$(OAS_URL)" | uv run python -m json.tool | $(PIN_EXAMPLES) > $(SPEC)
+	curl -sSf "$(REPORTS_URL)" | uv run python -m json.tool > $(REPORTS)
 
 catalog: ## Regenerate src/baltic/_catalog.py from the vendored metadata
 	uv run python src/gen_catalog.py --spec $(SPEC) --reports $(REPORTS) --out $(CATALOG)
@@ -37,14 +37,11 @@ clean: ## Remove caches
 	rm -rf .ruff_cache .pytest_cache .mypy_cache
 	find . -type d -name __pycache__ -exec rm -rf {} +
 
-lint: ## Lint with ruff
-	uv run ruff check .
-
 format: ## Format with ruff
 	uv run ruff format .
 
 check: ## Lint, verify formatting, type-check and audit dependencies
-	uv run ruff check .
+	uv run ruff check . --fix
 	uv run ruff format --check .
 	uv run ty check
 	uv run deptry .
@@ -58,11 +55,11 @@ test-live: ## Run the end-to-end tests against the real BTD API
 test-cov: ## Run tests + export test results and code coverage
 	uv run pytest --junitxml=tests.xml --cov-report=xml:coverage.xml --cov=src/baltic
 
-sync: ## Sync uv.lock + Create venv and install dependencies
-	uv sync --all-groups
-
-setup: ## Check uv.lock + Create venv and install dependencies
+setup: ## Check lockfile + Create venv and install dependencies
 	uv sync --all-groups --locked
+
+sync: ## Sync lockfile + Create venv and install dependencies
+	uv sync --all-groups
 
 build: ## Build the sdist and wheel into dist/
 	rm -rf dist

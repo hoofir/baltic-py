@@ -33,7 +33,7 @@ def report_ids(spec: dict[str, Any]) -> list[str]:
     parameters = spec["paths"]["/api/v1/export"]["get"]["parameters"]
     for parameter in parameters:
         if parameter["name"] == "id":
-            return list(parameter["enum"])
+            return list(parameter["schema"]["enum"])
     raise SystemExit("no 'id' parameter found in spec/openapi.json")
 
 
@@ -80,7 +80,7 @@ def main() -> None:
 
     spec = json.loads(args.spec.read_text(encoding="utf-8"))
     catalog = json.loads(args.reports.read_text(encoding="utf-8"))["data"]
-    args.out.write_text(render(spec, catalog), encoding="utf-8")
+    args.out.write_text(render(spec, catalog), encoding="utf-8", newline="\r\n")
     print(f"wrote {args.out}")
 
 

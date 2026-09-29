@@ -6,21 +6,16 @@ CATALOG = src/baltic/_catalog.py
 
 # The spec restates the current time in its example timestamps; pin it so the
 # vendored copy only changes when the API itself does.
-PIN_EXAMPLES = sed -E 's/Format: `[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}`/Format: `2024-01-01T00:00`/g'
+PIN_EXAMPLES = s/Format: `[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}`/Format: `2024-01-01T00:00`/g
 
 spec-check: ## Fail if the published metadata differs from the vendored copy
-	@curl -sSf "$(OAS_URL)" | uv run python -m json.tool | $(PIN_EXAMPLES) > $(SPEC).live
-	@curl -sSf "$(REPORTS_URL)" | uv run python -m json.tool > $(REPORTS).live
-	@diff -u $(SPEC) $(SPEC).live > /dev/null && diff -u $(REPORTS) $(REPORTS).live > /dev/null && \
-		echo "spec is up to date" || \
-		(rm -f $(SPEC).live $(REPORTS).live; echo "spec drifted: run 'make spec catalog'"; exit 1)
-	@rm -f $(SPEC).live $(REPORTS).live
+	@sh spec/check.sh "$(OAS_URL)" "$(REPORTS_URL)" "$(SPEC)" "$(REPORTS)" '$(PIN_EXAMPLES)'
 
 spec: ## Refresh the vendored API metadata
-	curl -sSf "$(OAS_URL)" | uv run python -m json.tool | $(PIN_EXAMPLES) > $(SPEC)
+	curl -sSf "$(OAS_URL)" | uv run python -m json.tool | sed -E '$(PIN_EXAMPLES)' > $(SPEC)
 	curl -sSf "$(REPORTS_URL)" | uv run python -m json.tool > $(REPORTS)
 
-catalog: ## Regenerate src/baltic/_catalog.py from the vendored metadata
+catalog: ## Regenerate _catalog.py from the vendored metadata
 	uv run python src/gen_catalog.py --spec $(SPEC) --reports $(REPORTS) --out $(CATALOG)
 	uv run ruff format $(CATALOG)
 

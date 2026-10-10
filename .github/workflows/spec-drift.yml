@@ -30,7 +30,7 @@ jobs:
         if: failure()
         env:
           GH_TOKEN: ${{ github.token }}
-          TITLE: BTD spec drift detected
+          TITLE: API spec drift detected
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           open="$(gh issue list --state open --search "in:title $TITLE" --json number --jq length)"
@@ -39,4 +39,4 @@ jobs:
             exit 0
           fi
           gh issue create --title "$TITLE" --body \
-            "The published BTD metadata no longer matches the vendored copy. Run 'make spec catalog' and commit the result. Failing run: $RUN_URL"
+            "The published API metadata no longer matches the vendored copy. Run 'make spec catalog' and commit the result. Failing run: $RUN_URL"

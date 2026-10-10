@@ -29,7 +29,7 @@ help: ## Show this help
 		awk 'BEGIN {FS = ":.*?## "} {printf "\033[36m%-12s\033[0m %s\n", $$1, $$2}'
 
 clean: ## Remove caches
-	rm -rf .ruff_cache .pytest_cache .mypy_cache
+	rm -rf dist .ruff_cache .pytest_cache .mypy_cache
 	find . -type d -name __pycache__ -exec rm -rf {} +
 
 format: ## Format with ruff

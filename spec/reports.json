@@ -380,7 +380,7 @@
                 "promoted": true,
                 "sticky": false,
                 "created": 1738662408,
-                "changed": 1759310484,
+                "changed": 1791543349,
                 "summary": "<p>Allocated cross-border capacity for balancing reserves.</p><p><strong>Historical data in 60-minute resolution could be found here: https://baltic.transparency-dashboard.eu/node/123</strong></p>",
                 "_empty_summary": true,
                 "machine_name": "allocated_cb_capacity",
@@ -997,166 +997,6 @@
                 ]
             },
             {
-                "id": 31,
-                "title": "ER mFRR bid volumes",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728638138,
-                "summary": "<p>Aggregated volumes of balancing energy bids based on ER mFRR product, submitted to each Baltic TSO by their local BSPs for upward and downward activation.</p>",
-                "_empty_summary": true,
-                "machine_name": "er_mfrr_bid_volumes",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 32,
-                "title": "Unavailable mFRR bid volumes (legacy)",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728635116,
-                "summary": "<p>Unavailable bids refer to aggregated bid volumes, based on mFRR product, which have been adjusted by BSPs prior to or after the balancing bid submission gate closure time.</p>",
-                "_empty_summary": true,
-                "machine_name": "unavailable_mfrr_bid_volumes",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 33,
-                "title": "mFRR bid prices",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728638085,
-                "summary": "<p>The minimum and maximum prices of balancing energy bids based on mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
-                "_empty_summary": true,
-                "machine_name": "mfrr_bid_prices",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 34,
-                "title": "ER mFRR bid prices",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728638118,
-                "summary": "<p>The minimum and maximum prices of balancing energy bids based on ER mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
-                "_empty_summary": true,
-                "machine_name": "er_mfrr_bid_prices",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 35,
-                "title": "Normal activations - Total",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728638066,
-                "summary": "<p>Aggregated volume of balancing energy bids activated from both mFRR &amp; ER mFRR product bids for Baltic CoBA balancing purposes with the aim of minimizing the Baltic ACE. Volumes are shown based on the location of the resource.</p>",
-                "_empty_summary": true,
-                "machine_name": "normal_activations_total",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 36,
-                "title": "Normal activations - mFRR",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728638048,
-                "summary": "<p>Aggregated volume of balancing energy bids activated from mFRR product bids for Baltic CoBA balancing purposes with the aim of minimizing the Baltic ACE. Volumes are shown based on the location of the resource.</p>",
-                "_empty_summary": true,
-                "machine_name": "normal_activations_mfrr",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 37,
-                "title": "Normal activations - ER mFRR",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728638028,
-                "summary": "<p>Aggregated volume of balancing energy bids activated from ER mFRR product bids for Baltic CoBA balancing purposes with the aim of minimizing the Baltic ACE. Volumes are shown based on the location of the resource.</p>",
-                "_empty_summary": true,
-                "machine_name": "normal_activations_er_mfrr",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
-                "id": 38,
-                "title": "Special activations - Total",
-                "type": "report",
-                "status": true,
-                "promoted": true,
-                "sticky": false,
-                "created": 1616675477,
-                "changed": 1728637967,
-                "summary": "<p>Aggregated volume of balancing energy bids activated from both mFRR &amp; ER mFRR product bids for reasons other than Baltic CoBA balancing purposes (system services &amp; countertrade). Volumes are shown based on the location of the resource.</p>",
-                "_empty_summary": true,
-                "machine_name": "special_activations_total",
-                "default_display": "table",
-                "resolutions": [
-                    "PT15M"
-                ],
-                "tags": [
-                    94
-                ]
-            },
-            {
                 "id": 39,
                 "title": "System services",
                 "type": "report",
@@ -1313,6 +1153,166 @@
                 "default_display": "table",
                 "resolutions": [
                     "PT1H"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 31,
+                "title": "ER mFRR bid volumes",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638138,
+                "summary": "<p>Aggregated volumes of balancing energy bids based on ER mFRR product, submitted to each Baltic TSO by their local BSPs for upward and downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "er_mfrr_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 32,
+                "title": "Unavailable mFRR bid volumes (legacy)",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728635116,
+                "summary": "<p>Unavailable bids refer to aggregated bid volumes, based on mFRR product, which have been adjusted by BSPs prior to or after the balancing bid submission gate closure time.</p>",
+                "_empty_summary": true,
+                "machine_name": "unavailable_mfrr_bid_volumes",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 33,
+                "title": "mFRR bid prices",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638085,
+                "summary": "<p>The minimum and maximum prices of balancing energy bids based on mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "mfrr_bid_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 34,
+                "title": "ER mFRR bid prices",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638118,
+                "summary": "<p>The minimum and maximum prices of balancing energy bids based on ER mFRR product submitted to each Baltic TSO by their local BSPs for upward &amp; downward activation.</p>",
+                "_empty_summary": true,
+                "machine_name": "er_mfrr_bid_prices",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 35,
+                "title": "Normal activations - Total",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638066,
+                "summary": "<p>Aggregated volume of balancing energy bids activated from both mFRR &amp; ER mFRR product bids for Baltic CoBA balancing purposes with the aim of minimizing the Baltic ACE. Volumes are shown based on the location of the resource.</p>",
+                "_empty_summary": true,
+                "machine_name": "normal_activations_total",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 36,
+                "title": "Normal activations - mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638048,
+                "summary": "<p>Aggregated volume of balancing energy bids activated from mFRR product bids for Baltic CoBA balancing purposes with the aim of minimizing the Baltic ACE. Volumes are shown based on the location of the resource.</p>",
+                "_empty_summary": true,
+                "machine_name": "normal_activations_mfrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 37,
+                "title": "Normal activations - ER mFRR",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728638028,
+                "summary": "<p>Aggregated volume of balancing energy bids activated from ER mFRR product bids for Baltic CoBA balancing purposes with the aim of minimizing the Baltic ACE. Volumes are shown based on the location of the resource.</p>",
+                "_empty_summary": true,
+                "machine_name": "normal_activations_er_mfrr",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
+                ],
+                "tags": [
+                    94
+                ]
+            },
+            {
+                "id": 38,
+                "title": "Special activations - Total",
+                "type": "report",
+                "status": true,
+                "promoted": true,
+                "sticky": false,
+                "created": 1616675477,
+                "changed": 1728637967,
+                "summary": "<p>Aggregated volume of balancing energy bids activated from both mFRR &amp; ER mFRR product bids for reasons other than Baltic CoBA balancing purposes (system services &amp; countertrade). Volumes are shown based on the location of the resource.</p>",
+                "_empty_summary": true,
+                "machine_name": "special_activations_total",
+                "default_display": "table",
+                "resolutions": [
+                    "PT15M"
                 ],
                 "tags": [
                     94

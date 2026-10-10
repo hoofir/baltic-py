@@ -238,7 +238,7 @@ def test_catalog_matches_the_published_spec(client):
     """Detect reports the API added or dropped since the catalog was generated."""
     spec = json.loads(SPEC.read_text(encoding="utf-8"))
     declared = next(
-        parameter["enum"]
+        parameter["schema"]["enum"]
         for parameter in spec["paths"]["/api/v1/export"]["get"]["parameters"]
         if parameter["name"] == "id"
     )
